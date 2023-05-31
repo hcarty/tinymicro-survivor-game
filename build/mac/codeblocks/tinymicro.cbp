@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tinymicro" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug|x64">
+				<Option output="../../../bin/tinymicrod" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-m64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-D__orxDEBUG__" />
+					<Add option="-stdlib=libc++" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/Scroll" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-stdlib=libc++" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxd" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Profile|x64">
+				<Option output="../../../bin/tinymicrop" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Profile" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-D__orxPROFILER__" />
+					<Add option="-stdlib=libc++" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/Scroll" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-stdlib=libc++" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxp" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release|x64">
+				<Option output="../../../bin/tinymicro" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-stdlib=libc++" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/Scroll" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-stdlib=libc++" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="../../../src/Object.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/tinymicro.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../include/tinymicro.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/Object.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/Scroll.h">
+			<Option virtualFolder="include/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/ScrollObject.h">
+			<Option virtualFolder="include/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/ScrollEd.h">
+			<Option virtualFolder="include/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/ScrollBase.h">
+			<Option virtualFolder="include/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/ScrollBase.inl">
+			<Option virtualFolder="inline" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/ScrollObject.inl">
+			<Option virtualFolder="inline" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/Scroll.inl">
+			<Option virtualFolder="inline" />
+		</Unit>
+		<Unit filename="../../../include/Scroll/ScrollEd.inl">
+			<Option virtualFolder="inline" />
+		</Unit>
+		<Unit filename="../../premake4.lua">
+			<Option virtualFolder="build" />
+		</Unit>
+		<Unit filename="../../../data/config/CreationTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/tinymicrop.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/tinymicrod.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/tinymicro.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/SettingsTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Extensions>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
+

@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		059739DE480143F745522728 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E041BC33107A63095D54D3 /* Object.cpp */; };
+		33CB6A1400D268006CF76FD6 /* tinymicro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5966619C7A4207C94D6E13B4 /* tinymicro.cpp */; };
+		30931B4B5BF0779028A91F6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF0413910332CC559751B3C /* Foundation.framework */; };
+		5F69235C24EE3CD2141124BE /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9A6B155DD976414EA34AA0 /* AppKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30A6728E633A2BEE215501BD /* premake4.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "premake4.lua"; path = "../../premake4.lua"; sourceTree = "<group>"; };
+		4C9D0AC3271D0CC164970565 /* CreationTemplate.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "CreationTemplate.ini"; path = "../../../data/config/CreationTemplate.ini"; sourceTree = "<group>"; };
+		61CD5AD700E7685A26CA5494 /* SettingsTemplate.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "SettingsTemplate.ini"; path = "../../../data/config/SettingsTemplate.ini"; sourceTree = "<group>"; };
+		794355A56EFF29924399161C /* tinymicro.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "tinymicro.ini"; path = "../../../data/config/tinymicro.ini"; sourceTree = "<group>"; };
+		3C0E7C9264F0508D16A9570D /* tinymicrod.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "tinymicrod.ini"; path = "../../../data/config/tinymicrod.ini"; sourceTree = "<group>"; };
+		512378D52331726F018A1F0C /* tinymicrop.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "tinymicrop.ini"; path = "../../../data/config/tinymicrop.ini"; sourceTree = "<group>"; };
+		7996266958FE260D2F2A76C2 /* Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Object.h"; path = "../../../include/Object.h"; sourceTree = "<group>"; };
+		7A8210216C333FDE24B05931 /* Scroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Scroll.h"; path = "../../../include/Scroll/Scroll.h"; sourceTree = "<group>"; };
+		60876AFF2B9817136E007183 /* ScrollBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBase.h"; path = "../../../include/Scroll/ScrollBase.h"; sourceTree = "<group>"; };
+		76CE5E88670A659E0A0978E6 /* ScrollEd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollEd.h"; path = "../../../include/Scroll/ScrollEd.h"; sourceTree = "<group>"; };
+		5EA1416C4322098C723870E5 /* ScrollObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollObject.h"; path = "../../../include/Scroll/ScrollObject.h"; sourceTree = "<group>"; };
+		7C0B40C34F8624AD5DDB7CD9 /* tinymicro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "tinymicro.h"; path = "../../../include/tinymicro.h"; sourceTree = "<group>"; };
+		5A336AE01868553F31866FC9 /* Scroll.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Scroll.inl"; path = "../../../include/Scroll/Scroll.inl"; sourceTree = "<group>"; };
+		35117DE6081B3D507B3564A9 /* ScrollBase.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ScrollBase.inl"; path = "../../../include/Scroll/ScrollBase.inl"; sourceTree = "<group>"; };
+		4EB36BC5611B54823C672531 /* ScrollEd.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ScrollEd.inl"; path = "../../../include/Scroll/ScrollEd.inl"; sourceTree = "<group>"; };
+		37D90D996B9854457E702835 /* ScrollObject.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ScrollObject.inl"; path = "../../../include/Scroll/ScrollObject.inl"; sourceTree = "<group>"; };
+		50E041BC33107A63095D54D3 /* Object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Object.cpp"; path = "../../../src/Object.cpp"; sourceTree = "<group>"; };
+		5966619C7A4207C94D6E13B4 /* tinymicro.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tinymicro.cpp"; path = "../../../src/tinymicro.cpp"; sourceTree = "<group>"; };
+		7DF0413910332CC559751B3C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "/System/Library/Frameworks/Foundation.framework"; sourceTree = "<absolute>"; };
+		0B9A6B155DD976414EA34AA0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AppKit.framework"; path = "/System/Library/Frameworks/AppKit.framework"; sourceTree = "<absolute>"; };
+		32B31306103479C03A8318A5 /* tinymicrod */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "tinymicrod"; path = "tinymicrod"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BDA038D570D24CD2C1B58E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30931B4B5BF0779028A91F6C /* Foundation.framework in Frameworks */,
+				5F69235C24EE3CD2141124BE /* AppKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F385E011D6F11DA40CC39F5 /* tinymicro */ = {
+			isa = PBXGroup;
+			children = (
+				26350CDB1B4B734A0A3B3D26 /* build */,
+				232016E46F9A0B9D2CEF2C7B /* config */,
+				00522E4E29513547536C1488 /* include */,
+				40B15889123E6028626D19CE /* inline */,
+				3D3E5CA84E0E05D175790997 /* src */,
+				7EBF4B0A2BF4232911477170 /* Frameworks */,
+				4BC46E31572558BE38D80BCB /* Products */,
+			);
+			name = "tinymicro";
+			sourceTree = "<group>";
+		};
+		26350CDB1B4B734A0A3B3D26 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				30A6728E633A2BEE215501BD /* premake4.lua */,
+			);
+			name = "build";
+			sourceTree = "<group>";
+		};
+		232016E46F9A0B9D2CEF2C7B /* config */ = {
+			isa = PBXGroup;
+			children = (
+				4C9D0AC3271D0CC164970565 /* CreationTemplate.ini */,
+				61CD5AD700E7685A26CA5494 /* SettingsTemplate.ini */,
+				794355A56EFF29924399161C /* tinymicro.ini */,
+				3C0E7C9264F0508D16A9570D /* tinymicrod.ini */,
+				512378D52331726F018A1F0C /* tinymicrop.ini */,
+			);
+			name = "config";
+			sourceTree = "<group>";
+		};
+		00522E4E29513547536C1488 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7996266958FE260D2F2A76C2 /* Object.h */,
+				7AA83BC5325E57B016AA76E6 /* Scroll */,
+				7C0B40C34F8624AD5DDB7CD9 /* tinymicro.h */,
+			);
+			name = "include";
+			sourceTree = "<group>";
+		};
+		7AA83BC5325E57B016AA76E6 /* Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				7A8210216C333FDE24B05931 /* Scroll.h */,
+				60876AFF2B9817136E007183 /* ScrollBase.h */,
+				76CE5E88670A659E0A0978E6 /* ScrollEd.h */,
+				5EA1416C4322098C723870E5 /* ScrollObject.h */,
+			);
+			name = "Scroll";
+			sourceTree = "<group>";
+		};
+		40B15889123E6028626D19CE /* inline */ = {
+			isa = PBXGroup;
+			children = (
+				5A336AE01868553F31866FC9 /* Scroll.inl */,
+				35117DE6081B3D507B3564A9 /* ScrollBase.inl */,
+				4EB36BC5611B54823C672531 /* ScrollEd.inl */,
+				37D90D996B9854457E702835 /* ScrollObject.inl */,
+			);
+			name = "inline";
+			sourceTree = "<group>";
+		};
+		3D3E5CA84E0E05D175790997 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				50E041BC33107A63095D54D3 /* Object.cpp */,
+				5966619C7A4207C94D6E13B4 /* tinymicro.cpp */,
+			);
+			name = "src";
+			sourceTree = "<group>";
+		};
+		7EBF4B0A2BF4232911477170 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DF0413910332CC559751B3C /* Foundation.framework */,
+				0B9A6B155DD976414EA34AA0 /* AppKit.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		4BC46E31572558BE38D80BCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32B31306103479C03A8318A5 /* tinymicrod */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		373E52B119797DE428D835A8 /* tinymicro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5503442455204BF07AC60C55 /* Build configuration list for PBXNativeTarget "tinymicro" */;
+			buildPhases = (
+				5CAF0EA45F84588D325D0923 /* Resources */,
+				73C6530A69831FD24CA04B74 /* Sources */,
+				3BDA038D570D24CD2C1B58E8 /* Frameworks */,
+				9607AE3710C85E8F00CD1376 /* Postbuild */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tinymicro";
+			productInstallPath = "$(HOME)/bin";
+			productName = "tinymicro";
+			productReference = 32B31306103479C03A8318A5 /* tinymicrod */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "tinymicro" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 6F385E011D6F11DA40CC39F5 /* tinymicro */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				373E52B119797DE428D835A8 /* tinymicrod */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CAF0EA45F84588D325D0923 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9607AE3710C85E8F00CD1376 /* Postbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Postbuild;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -f /Users/hcarty/projects/orx/code/lib/dynamic/liborx*.dylib ../../../bin";
+		};
+/* End PBXShellScriptBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+		73C6530A69831FD24CA04B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059739DE480143F745522728 /* Object.cpp in Sources */,
+				33CB6A1400D268006CF76FD6 /* tinymicro.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		593324B31F6B65A01E995E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "tinymicrod";
+			};
+			name = "Debug";
+		};
+		223C4BE81B2F590B1DB779A1 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "tinymicrop";
+			};
+			name = "Profile";
+		};
+		05166D651FDA44C51F492DB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "tinymicro";
+			};
+			name = "Release";
+		};
+		3FAA34466B8D245A41E614B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__orxDEBUG__",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/Scroll",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/x64/Debug";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-stdlib=libc++",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorxd",
+					"-stdlib=libc++",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Debug";
+		};
+		612615E1207F303C458662C9 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__orxPROFILER__",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/Scroll",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/x64/Profile";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-stdlib=libc++",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorxp",
+					"-stdlib=libc++",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Profile";
+		};
+		4FDD6DCE77CD52265C4C1D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/Scroll",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/x64/Release";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-stdlib=libc++",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorx",
+					"-stdlib=libc++",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Release";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5503442455204BF07AC60C55 /* Build configuration list for PBXNativeTarget "tinymicrod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				593324B31F6B65A01E995E22 /* Debug */,
+				223C4BE81B2F590B1DB779A1 /* Profile */,
+				05166D651FDA44C51F492DB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Debug";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "tinymicro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FAA34466B8D245A41E614B5 /* Debug */,
+				612615E1207F303C458662C9 /* Profile */,
+				4FDD6DCE77CD52265C4C1D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Debug";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

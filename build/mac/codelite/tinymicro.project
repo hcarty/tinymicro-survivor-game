@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Project Name="tinymicro">
+  <VirtualDirectory Name="tinymicro">
+    <VirtualDirectory Name="build">
+      <File Name="../../premake4.lua"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="config">
+      <File Name="../../../data/config/CreationTemplate.ini"/>
+      <File Name="../../../data/config/SettingsTemplate.ini"/>
+      <File Name="../../../data/config/tinymicro.ini"/>
+      <File Name="../../../data/config/tinymicrod.ini"/>
+      <File Name="../../../data/config/tinymicrop.ini"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="include">
+      <File Name="../../../include/Object.h"/>
+      <VirtualDirectory Name="Scroll">
+        <File Name="../../../include/Scroll/Scroll.h"/>
+        <File Name="../../../include/Scroll/ScrollBase.h"/>
+        <File Name="../../../include/Scroll/ScrollEd.h"/>
+        <File Name="../../../include/Scroll/ScrollObject.h"/>
+      </VirtualDirectory>
+      <File Name="../../../include/tinymicro.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="inline">
+      <File Name="../../../include/Scroll/Scroll.inl"/>
+      <File Name="../../../include/Scroll/ScrollBase.inl"/>
+      <File Name="../../../include/Scroll/ScrollEd.inl"/>
+      <File Name="../../../include/Scroll/ScrollObject.inl"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="src">
+      <File Name="../../../src/Object.cpp"/>
+      <File Name="../../../src/tinymicro.cpp"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Settings Type="Executable">
+    <Configuration Name="Debug_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/tinymicrod" IntermediateDirectory="$(ConfigurationName)" Command="./tinymicrod" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-m64;-fno-exceptions;-stdlib=libc++;-gdwarf-2;-Wno-unused-function;-Wno-write-strings" C_Options="-ffast-math;-g;-m64;-stdlib=libc++;-gdwarf-2;-Wno-unused-function;-Wno-write-strings">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/Scroll"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="__orxDEBUG__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-stdlib=libc++;-dead_strip;-framework Foundation;-framework AppKit">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxd" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Profile_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/tinymicrop" IntermediateDirectory="$(ConfigurationName)" Command="./tinymicrop" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-O2;-m64;-fno-exceptions;-fno-rtti;-stdlib=libc++;-gdwarf-2;-Wno-unused-function;-Wno-write-strings" C_Options="-ffast-math;-g;-O2;-m64;-stdlib=libc++;-gdwarf-2;-Wno-unused-function;-Wno-write-strings">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/Scroll"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="__orxPROFILER__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-stdlib=libc++;-dead_strip;-framework Foundation;-framework AppKit">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxp" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Release_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/tinymicro" IntermediateDirectory="$(ConfigurationName)" Command="./tinymicro" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-O2;-m64;-fno-exceptions;-fno-rtti;-stdlib=libc++;-gdwarf-2;-Wno-unused-function;-Wno-write-strings" C_Options="-ffast-math;-g;-O2;-m64;-stdlib=libc++;-gdwarf-2;-Wno-unused-function;-Wno-write-strings">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/Scroll"/>
+        <IncludePath Value="../../../include"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-stdlib=libc++;-dead_strip;-framework Foundation;-framework AppKit">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orx" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+  </Settings>
+  <Dependencies name="Debug_x64">
+  </Dependencies>
+  <Dependencies name="Profile_x64">
+  </Dependencies>
+  <Dependencies name="Release_x64">
+  </Dependencies>
+</CodeLite_Project>

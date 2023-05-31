@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Workspace Name="tinymicro" Database="./tinymicro.tags">
+  <Project Name="tinymicro" Path="tinymicro.project" Active="Yes" />
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug_x64" Selected="yes">
+      <Project Name="tinymicro" ConfigName="Debug_x64"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Profile_x64" Selected="yes">
+      <Project Name="tinymicro" ConfigName="Profile_x64"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release_x64" Selected="yes">
+      <Project Name="tinymicro" ConfigName="Release_x64"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

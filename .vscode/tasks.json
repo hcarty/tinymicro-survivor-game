@@ -1,0 +1,171 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Update premake build",
+            "group": "build",
+            "type": "process",
+            "command": "premake4",
+            "options": {
+                "cwd": "build/"
+            }
+        },
+        {
+            "label": "Run (debug)",
+            "dependsOn": [
+                "Build (debug)"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "type": "process",
+            "command": "tinymicrod",
+            "options": {
+                "cwd": "bin/"
+            }
+        },
+        {
+            "label": "Run (release)",
+            "dependsOn": [
+                "Build (release)"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "type": "process",
+            "command": "tinymicro",
+            "options": {
+                "cwd": "bin/"
+            }
+        },
+        {
+            "label": "Run (profile)",
+            "dependsOn": [
+                "Build (profile)"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "type": "process",
+            "command": "tinymicrop",
+            "options": {
+                "cwd": "bin/"
+            }
+        },
+        {
+            "label": "Build (debug, profile, release)",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Build (debug)",
+                "Build (profile)",
+                "Build (release)"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build (debug)",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "type": "shell",
+            "linux": {
+                "command": "make -j",
+                "options": {
+                    "cwd": "build/linux/gmake/"
+                }
+            },
+            "osx": {
+                "command": "make -j",
+                "options": {
+                    "cwd": "build/mac/gmake/"
+                }
+            },
+            "windows": {
+                "command": "mingw32-make.exe",
+                "options": {
+                    "cwd": "build/windows/gmake/",
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build (profile)",
+            "group": "build",
+            "type": "shell",
+            "command": "make -j config=profile64",
+            "linux": {
+                "options": {
+                    "cwd": "build/linux/gmake/"
+                }
+            },
+            "osx": {
+                "options": {
+                    "cwd": "build/mac/gmake/"
+                }
+            },
+            "windows": {
+                "command": "mingw32-make.exe config=profile64",
+                "options": {
+                    "cwd": "build/windows/gmake/",
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build (release)",
+            "group": "build",
+            "type": "shell",
+            "command": "make -j config=release64",
+            "linux": {
+                "options": {
+                    "cwd": "build/linux/gmake/"
+                }
+            },
+            "osx": {
+                "options": {
+                    "cwd": "build/mac/gmake/"
+                }
+            },
+            "windows": {
+                "command": "mingw32-make.exe config=release64",
+                "options": {
+                    "cwd": "build/windows/gmake/",
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
