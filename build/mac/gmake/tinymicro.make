@@ -92,6 +92,7 @@ ifeq ($(config),release64)
 endif
 
 OBJECTS := \
+	$(OBJDIR)/Character.o \
 	$(OBJDIR)/Object.o \
 	$(OBJDIR)/tinymicro.o \
 
@@ -153,6 +154,10 @@ $(GCH): $(PCH)
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -MMD -MP $(DEFINES) $(INCLUDES) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
 endif
+
+$(OBJDIR)/Character.o: ../../../src/Character.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
 $(OBJDIR)/Object.o: ../../../src/Object.cpp
 	@echo $(notdir $<)

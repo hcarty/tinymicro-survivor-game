@@ -7,12 +7,13 @@
 #include "tinymicro.h"
 #undef __SCROLL_IMPL__
 
+#include "Character.h"
 #include "Object.h"
 
 #ifdef __orxMSVC__
 
 /* Requesting high performance dedicated GPU on hybrid laptops */
-__declspec(dllexport) unsigned long NvOptimusEnablement        = 1;
+__declspec(dllexport) unsigned long NvOptimusEnablement = 1;
 __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
 
 #endif // __orxMSVC__
@@ -22,7 +23,7 @@ __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
 void tinymicro::Update(const orxCLOCK_INFO &_rstInfo)
 {
   // Should quit?
-  if(orxInput_IsActive("Quit"))
+  if (orxInput_IsActive("Quit"))
   {
     // Send close event
     orxEvent_SendShort(orxEVENT_TYPE_SYSTEM, orxSYSTEM_EVENT_CLOSE);
@@ -33,11 +34,6 @@ void tinymicro::Update(const orxCLOCK_INFO &_rstInfo)
  */
 orxSTATUS tinymicro::Init()
 {
-  // Display a small hint in console
-  orxLOG("\n* This template project creates a simple scene"
-  "\n* You can play with the config parameters in ../data/config/tinymicro.ini"
-  "\n* After changing them, relaunch the executable to see the changes.");
-
   // Create the scene
   CreateObject("Scene");
 
@@ -64,7 +60,8 @@ void tinymicro::Exit()
  */
 void tinymicro::BindObjects()
 {
-  // Bind the Object class to the Object config section
+  // Bind classes to the config sections
+  ScrollBindObject<Character>("Character");
   ScrollBindObject<Object>("Object");
 }
 
