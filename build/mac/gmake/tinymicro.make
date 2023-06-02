@@ -94,6 +94,7 @@ endif
 OBJECTS := \
 	$(OBJDIR)/Character.o \
 	$(OBJDIR)/Object.o \
+	$(OBJDIR)/Mob.o \
 	$(OBJDIR)/tinymicro.o \
 
 RESOURCES := \
@@ -160,6 +161,10 @@ $(OBJDIR)/Character.o: ../../../src/Character.cpp
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
 $(OBJDIR)/Object.o: ../../../src/Object.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Mob.o: ../../../src/Mob.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

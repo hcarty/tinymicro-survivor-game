@@ -8,6 +8,7 @@
 #undef __SCROLL_IMPL__
 
 #include "Character.h"
+#include "Mob.h"
 #include "Object.h"
 
 #ifdef __orxMSVC__
@@ -62,6 +63,7 @@ void tinymicro::BindObjects()
 {
   // Bind classes to the config sections
   ScrollBindObject<Character>("Character");
+  ScrollBindObject<Mob>("Mob");
   ScrollBindObject<Object>("Object");
 }
 

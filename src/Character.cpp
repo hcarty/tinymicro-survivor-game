@@ -28,4 +28,11 @@ void Character::Update(const orxCLOCK_INFO &_rstInfo)
 
   orxInput_SelectSet(previousSet);
   PopConfigSection();
+
+  // Save position to config so mobs can track
+  orxVECTOR position = orxVECTOR_0;
+  GetPosition(position, orxTRUE);
+  orxConfig_PushSection("Runtime");
+  orxConfig_SetVector("Target", &position);
+  orxConfig_PopSection();
 }
