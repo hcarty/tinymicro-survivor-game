@@ -8,6 +8,7 @@
 #undef __SCROLL_IMPL__
 
 #include "Character.h"
+#include "HealthBar.h"
 #include "Mob.h"
 #include "Object.h"
 
@@ -63,6 +64,7 @@ void tinymicro::BindObjects()
 {
   // Bind classes to the config sections
   ScrollBindObject<Character>("Character");
+  ScrollBindObject<HealthBar>("HealthBar");
   ScrollBindObject<Mob>("Mob");
   ScrollBindObject<Object>("Object");
 }
