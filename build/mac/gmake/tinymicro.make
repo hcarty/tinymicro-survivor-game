@@ -93,6 +93,8 @@ endif
 
 OBJECTS := \
 	$(OBJDIR)/Character.o \
+	$(OBJDIR)/Score.o \
+	$(OBJDIR)/HealthBar.o \
 	$(OBJDIR)/Object.o \
 	$(OBJDIR)/Mob.o \
 	$(OBJDIR)/tinymicro.o \
@@ -157,6 +159,14 @@ $(GCH): $(PCH)
 endif
 
 $(OBJDIR)/Character.o: ../../../src/Character.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Score.o: ../../../src/Score.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/HealthBar.o: ../../../src/HealthBar.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

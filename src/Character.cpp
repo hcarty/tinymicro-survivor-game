@@ -21,6 +21,9 @@ void Character::Update(const orxCLOCK_INFO &_rstInfo)
   if (healthBar->IsEmpty())
   {
     SetLifeTime(0.0);
+    orxConfig_PushSection("Runtime");
+    orxConfig_SetBool("GameOver", true);
+    orxConfig_PopSection();
   }
 
   // Heal a little bit based on how much time has passed

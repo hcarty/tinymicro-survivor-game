@@ -11,6 +11,7 @@
 #include "HealthBar.h"
 #include "Mob.h"
 #include "Object.h"
+#include "Score.h"
 
 #ifdef __orxMSVC__
 
@@ -67,6 +68,7 @@ void tinymicro::BindObjects()
   ScrollBindObject<HealthBar>("HealthBar");
   ScrollBindObject<Mob>("Mob");
   ScrollBindObject<Object>("Object");
+  ScrollBindObject<Score>("Score");
 }
 
 /** Bootstrap function, it is called before config is initialized, allowing for early resource storage definitions
