@@ -7,8 +7,11 @@
 #include "tinymicro.h"
 #undef __SCROLL_IMPL__
 
+#include "orxLDtk.h"
+
 #include "Character.h"
 #include "HealthBar.h"
+#include "LDtkWorld.h"
 #include "Mob.h"
 #include "Object.h"
 #include "Score.h"
@@ -37,6 +40,9 @@ void tinymicro::Update(const orxCLOCK_INFO &_rstInfo)
  */
 orxSTATUS tinymicro::Init()
 {
+  // Initialize LDtk support
+  orxLDtk_Init(ldtkworld::GetCallbacks());
+
   // Create the scene
   CreateObject("Scene");
 
@@ -56,6 +62,9 @@ orxSTATUS tinymicro::Run()
  */
 void tinymicro::Exit()
 {
+  // Exit from LDtk support
+  orxLDtk_Exit();
+
   // Let orx clean all our mess automatically. :)
 }
 

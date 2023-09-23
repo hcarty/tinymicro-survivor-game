@@ -27,7 +27,7 @@ ifeq ($(config),debug64)
   INCLUDES  += -I$(ORX)/include -I../../../include/Scroll -I../../../include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) -ffast-math -g -m64 -stdlib=libc++ -gdwarf-2 -Wno-unused-function -Wno-write-strings -std=c++20
-  ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS) -fno-exceptions
+  ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
   ALL_RESFLAGS  += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS   += $(LDFLAGS) -L$(ORX)/lib/dynamic -L. -m64 -L/usr/lib64 -stdlib=libc++ -dead_strip
   LIBS      += -lorxd -framework Foundation -framework AppKit
@@ -51,7 +51,7 @@ ifeq ($(config),profile64)
   INCLUDES  += -I$(ORX)/include -I../../../include/Scroll -I../../../include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) -ffast-math -g -O2 -m64 -stdlib=libc++ -gdwarf-2 -Wno-unused-function -Wno-write-strings -std=c++20
-  ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS) -fno-exceptions -fno-rtti
+  ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
   ALL_RESFLAGS  += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS   += $(LDFLAGS) -L$(ORX)/lib/dynamic -L. -m64 -L/usr/lib64 -stdlib=libc++ -dead_strip
   LIBS      += -lorxp -framework Foundation -framework AppKit
@@ -75,7 +75,7 @@ ifeq ($(config),release64)
   INCLUDES  += -I$(ORX)/include -I../../../include/Scroll -I../../../include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) -ffast-math -g -O2 -m64 -stdlib=libc++ -gdwarf-2 -Wno-unused-function -Wno-write-strings -std=c++20
-  ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS) -fno-exceptions -fno-rtti
+  ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
   ALL_RESFLAGS  += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS   += $(LDFLAGS) -L$(ORX)/lib/dynamic -L. -m64 -L/usr/lib64 -stdlib=libc++ -dead_strip
   LIBS      += -lorx -framework Foundation -framework AppKit
@@ -92,12 +92,28 @@ ifeq ($(config),release64)
 endif
 
 OBJECTS := \
+	$(OBJDIR)/LDtkWorld.o \
 	$(OBJDIR)/Character.o \
+	$(OBJDIR)/orxLDtk.o \
 	$(OBJDIR)/Score.o \
 	$(OBJDIR)/HealthBar.o \
 	$(OBJDIR)/Object.o \
 	$(OBJDIR)/Mob.o \
 	$(OBJDIR)/tinymicro.o \
+	$(OBJDIR)/Utils.o \
+	$(OBJDIR)/Tileset.o \
+	$(OBJDIR)/Entity.o \
+	$(OBJDIR)/Level.o \
+	$(OBJDIR)/Layer.o \
+	$(OBJDIR)/Project.o \
+	$(OBJDIR)/DataTypes.o \
+	$(OBJDIR)/TagsContainer.o \
+	$(OBJDIR)/EntityDef.o \
+	$(OBJDIR)/Enum.o \
+	$(OBJDIR)/FieldsContainer.o \
+	$(OBJDIR)/Tile.o \
+	$(OBJDIR)/World.o \
+	$(OBJDIR)/LayerDef.o \
 
 RESOURCES := \
 
@@ -158,7 +174,15 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -MMD -MP $(DEFINES) $(INCLUDES) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
 endif
 
+$(OBJDIR)/LDtkWorld.o: ../../../src/LDtkWorld.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
 $(OBJDIR)/Character.o: ../../../src/Character.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/orxLDtk.o: ../../../src/orxLDtk.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
@@ -179,6 +203,62 @@ $(OBJDIR)/Mob.o: ../../../src/Mob.cpp
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
 $(OBJDIR)/tinymicro.o: ../../../src/tinymicro.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Utils.o: ../../../src/LDtkLoader/Utils.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Tileset.o: ../../../src/LDtkLoader/Tileset.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Entity.o: ../../../src/LDtkLoader/Entity.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Level.o: ../../../src/LDtkLoader/Level.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Layer.o: ../../../src/LDtkLoader/Layer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Project.o: ../../../src/LDtkLoader/Project.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/DataTypes.o: ../../../src/LDtkLoader/DataTypes.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/TagsContainer.o: ../../../src/LDtkLoader/TagsContainer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/EntityDef.o: ../../../src/LDtkLoader/EntityDef.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Enum.o: ../../../src/LDtkLoader/Enum.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/FieldsContainer.o: ../../../src/LDtkLoader/FieldsContainer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/Tile.o: ../../../src/LDtkLoader/Tile.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/World.o: ../../../src/LDtkLoader/World.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/LayerDef.o: ../../../src/LDtkLoader/LayerDef.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

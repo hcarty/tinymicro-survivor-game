@@ -96,7 +96,7 @@ solution "tinymicro"
         "NoManifest",
         "FloatFast",
         "NoNativeWChar",
-        "NoExceptions",
+        -- "NoExceptions",
         "NoIncrementalLink",
         "NoEditAndContinue",
         "NoMinimalRebuild",
@@ -126,11 +126,11 @@ solution "tinymicro"
     configuration {"*Profile*"}
         targetsuffix ("p")
         defines {"__orxPROFILER__"}
-        flags {"Optimize", "NoRTTI"}
+        flags {"Optimize"}
         links {"orxp"}
 
     configuration {"*Release*"}
-        flags {"Optimize", "NoRTTI"}
+        flags {"Optimize"}
         links {"orx"}
 
     configuration {"windows", "*Release*"}

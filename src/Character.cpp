@@ -26,10 +26,11 @@ void Character::Update(const orxCLOCK_INFO &_rstInfo)
     orxConfig_PopSection();
   }
 
-  // Heal a little bit based on how much time has passed
-  healthBar->Add(_rstInfo.fDT);
-
   PushConfigSection();
+
+  // Heal a little bit based on how much time has passed
+  healthBar->Add(_rstInfo.fDT * orxConfig_GetFloat("HealthPS"));
+
   auto previousSet = orxInput_GetCurrentSet();
   orxInput_SelectSet(inputSet.data());
 
@@ -49,6 +50,7 @@ void Character::Update(const orxCLOCK_INFO &_rstInfo)
   GetPosition(position, orxTRUE);
   orxConfig_PushSection("Runtime");
   orxConfig_SetVector("Target", &position);
+
   orxConfig_PopSection();
 }
 
