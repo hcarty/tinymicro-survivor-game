@@ -54,8 +54,11 @@ void Character::Update(const orxCLOCK_INFO &_rstInfo)
   orxConfig_PopSection();
 }
 
-orxBOOL Character::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart, const orxVECTOR &_rvPosition, const orxVECTOR &_rvNormal)
+void Character::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart, const orxVECTOR &_rvPosition, const orxVECTOR &_rvNormal)
 {
+  orxASSERT(_poCollider);
+
+  // Check for a health impact from the body part
   auto colliderPartName = orxBody_GetPartName(_pstColliderPart);
   if (orxConfig_HasSection(colliderPartName))
   {
@@ -68,5 +71,17 @@ orxBOOL Character::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, 
     healthBar->Add(static_cast<orxFLOAT>(impact));
   }
 
-  return orxTRUE;
+  // Check for pickup actions
+  _poCollider->PushConfigSection();
+  if (orxConfig_GetBool("IsPickup"))
+  {
+    _poCollider->SetLifeTime(0);
+    auto pickupCommand = orxConfig_GetString("OnPickup");
+    if (orxString_GetLength(pickupCommand) > 0)
+    {
+      orxCOMMAND_VAR _result;
+      orxCommand_EvaluateWithGUID(pickupCommand, GetGUID(), &_result);
+    }
+  }
+  _poCollider->PopConfigSection();
 }

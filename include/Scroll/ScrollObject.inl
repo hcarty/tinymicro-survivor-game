@@ -624,14 +624,12 @@ void ScrollObject::Update(const orxCLOCK_INFO &_rstInfo)
 {
 }
 
-orxBOOL ScrollObject::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart, const orxVECTOR &_rvPosition, const orxVECTOR &_rvNormal)
+void ScrollObject::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart, const orxVECTOR &_rvPosition, const orxVECTOR &_rvNormal)
 {
-  return orxTRUE;
 }
 
-orxBOOL ScrollObject::OnSeparate(ScrollObject *_poCollider)
+void ScrollObject::OnSeparate(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart)
 {
-  return orxTRUE;
 }
 
 void ScrollObject::OnNewAnim(const orxSTRING _zOldAnim, const orxSTRING _zNewAnim, orxBOOL _bCut)
@@ -643,6 +641,18 @@ void ScrollObject::OnAnimUpdate(const orxSTRING _zAnim)
 }
 
 void ScrollObject::OnAnimEvent(const orxSTRING _zAnim, const orxSTRING _zEvent, orxFLOAT _fTime, orxFLOAT _fValue)
+{
+}
+
+void ScrollObject::OnFXStart(const orxSTRING _zFX, orxFX *_pstFX)
+{
+}
+
+void ScrollObject::OnFXStop(const orxSTRING _zFX, orxFX *_pstFX)
+{
+}
+
+void ScrollObject::OnFXLoop(const orxSTRING _zFX, orxFX *_pstFX)
 {
 }
 
