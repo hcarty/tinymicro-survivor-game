@@ -15,7 +15,7 @@ void Character::OnDelete()
 
 void Character::Update(const orxCLOCK_INFO &_rstInfo)
 {
-  auto healthBar = ScrollCast<HealthBar *, ScrollObject *>(GetChildByName("HealthBar"));
+  auto healthBar = ScrollCast<HealthBar *, ScrollObject *>(GetChild("*.HealthBar"));
 
   // If our health has run out, it's game over!
   if (healthBar->IsEmpty())
@@ -56,7 +56,11 @@ void Character::Update(const orxCLOCK_INFO &_rstInfo)
 
 void Character::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart, const orxVECTOR &_rvPosition, const orxVECTOR &_rvNormal)
 {
-  orxASSERT(_poCollider);
+  if (!_poCollider)
+  {
+    // If we're colliding with something other than a ScrollObject there's nothing for us to handle
+    return;
+  }
 
   // Check for a health impact from the body part
   auto colliderPartName = orxBody_GetPartName(_pstColliderPart);
@@ -67,7 +71,7 @@ void Character::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orx
     orxConfig_PopSection();
 
     // Apply the effect of the impact on our health
-    auto healthBar = ScrollCast<HealthBar *, ScrollObject *>(GetChildByName("HealthBar"));
+    auto healthBar = ScrollCast<HealthBar *, ScrollObject *>(GetChild("*.HealthBar"));
     healthBar->Add(static_cast<orxFLOAT>(impact));
   }
 

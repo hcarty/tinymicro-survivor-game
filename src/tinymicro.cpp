@@ -10,6 +10,7 @@
 #include "orxLDtk.h"
 
 #include "Character.h"
+#include "GameMenu.h"
 #include "HealthBar.h"
 #include "LDtkWorld.h"
 #include "Mob.h"
@@ -44,7 +45,7 @@ orxSTATUS tinymicro::Init()
   orxLDtk_Init(ldtkworld::GetCallbacks());
 
   // Create the scene
-  CreateObject("Scene");
+  CreateObject("TitleScene");
 
   // Done!
   return orxSTATUS_SUCCESS;
@@ -74,6 +75,7 @@ void tinymicro::BindObjects()
 {
   // Bind classes to the config sections
   ScrollBindObject<Character>("Character");
+  ScrollBindObject<GameMenu>("GameMenu");
   ScrollBindObject<HealthBar>("HealthBar");
   ScrollBindObject<Mob>("Mob");
   ScrollBindObject<Object>("Object");

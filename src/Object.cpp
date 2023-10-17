@@ -18,17 +18,11 @@ void Object::Update(const orxCLOCK_INFO &_rstInfo)
 {
 }
 
-ScrollObject *Object::GetChildByName(const orxSTRING childName)
+ScrollObject *Object::GetChild(const orxSTRING search)
 {
-  for (ScrollObject *child = this->GetOwnedChild(); child; child = child->GetOwnedSibling())
-  {
-    if (orxString_Compare(child->GetModelName(), childName) == 0)
-    {
-      return child;
-    }
-  }
-
-  // If we get this far, fail hard
-  orxASSERT(false, "Unable to find child object named %s", childName);
-  return orxNULL;
+  auto child = orxObject_FindChild(GetOrxObject(), search);
+  orxASSERT(child, "Unable to find child object at %s", search);
+  auto scrollChild = static_cast<ScrollObject *>(orxObject_GetUserData(child));
+  orxASSERT(scrollChild, "Child object at path %s is not a Scroll object", search);
+  return scrollChild;
 }

@@ -100,6 +100,7 @@ OBJECTS := \
 	$(OBJDIR)/Object.o \
 	$(OBJDIR)/Mob.o \
 	$(OBJDIR)/tinymicro.o \
+	$(OBJDIR)/GameMenu.o \
 
 RESOURCES := \
 
@@ -189,6 +190,10 @@ $(OBJDIR)/Mob.o: ../../../src/Mob.cpp
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
 $(OBJDIR)/tinymicro.o: ../../../src/tinymicro.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+
+$(OBJDIR)/GameMenu.o: ../../../src/GameMenu.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

@@ -1,15 +1,16 @@
 #pragma once
 
-#include "tinymicro.h"
+#include <string>
+#include "Object.h"
 
-class Object : public ScrollObject
+class GameMenu : public Object
 {
 public:
 protected:
   void OnCreate();
   void OnDelete();
   void Update(const orxCLOCK_INFO &_rstInfo);
-  ScrollObject *GetChild(const orxSTRING search);
 
 private:
+  std::string inputSet{""};
 };

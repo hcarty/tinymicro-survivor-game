@@ -30,7 +30,7 @@ void HealthBar::OnDelete()
 void HealthBar::Update(const orxCLOCK_INFO &_rstInfo)
 {
   // Update health bar scale
-  auto bar = GetChildByName("HealthBarLevel");
+  auto bar = GetChild("*.HealthBarLevel");
   orxVECTOR scale;
   bar->GetScale(scale);
   scale.fX = level / MAX_LEVEL;
