@@ -10,8 +10,8 @@ stream of pursuing mobs.
 
 ## Libraries and assets
 
-This game is made with the [orx game engine](https://orx-project.org) and uses
-assets from [Kenney](https://kenney.nl).
+This game is made with the [orx game engine](https://orx-project.org),
+[LDtk editor](https://ldtk.io) and uses assets from [Kenney](https://kenney.nl).
 
 ## Licenses
 
